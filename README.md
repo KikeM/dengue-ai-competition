@@ -1,6 +1,7 @@
 - [dengue-ai-competition](#dengue-ai-competition)
   - [Folder Structure](#folder-structure)
     - [Why Bamboo?](#why-bamboo)
+- [Installation](#installation)
 
 # dengue-ai-competition
 Dengue prediction competition from DrivenData.
@@ -33,3 +34,17 @@ It was the name of a village in the Langtang Trek where
 I stopped by when I was in Nepal. 
 At the time I felt sick and didn't know what was happening,
 later on a blood test confirmed I had dengue.
+
+# Installation
+
+I am working on a MacOS M1 laptop, and so I have runned into problems installing `darts`,
+due to the `lightgbm` installation 
+(https://github.com/unit8co/darts/blob/master/INSTALL.md#macos-issues-with-lightgbm).
+
+As a workaround, once the environment is created (I am using `conda` as env manager),
+I install `lightgbm` with `conda` and then the remaining of the environment with `pip`.
+```bash
+conda install lightgbm -y
+pip install -e . -r requirements.txt
+```
+
