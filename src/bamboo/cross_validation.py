@@ -30,7 +30,10 @@ class TimeSeriesCrossValidation:
         self.size_test = size_test
         self.rnd_state = rnd_state
 
-    def split(self, data):
+    def get_n_splits(self, X=None, y=None, groups=None):
+        return self.n_splits
+
+    def split(self, X, y=None, groups=None):
         """Split data into consecutive train/test folds.
 
         Parameters
@@ -42,8 +45,8 @@ class TimeSeriesCrossValidation:
         train_index : pandas.Index
         test_index : pandas.Index
         """
-        length = data.shape[0]
-        index_data = data.index
+        length = X.shape[0]
+        index_data = X.index
 
         # Find latest training start
         length_train = int(np.ceil(self.size_train * length))
@@ -62,6 +65,6 @@ class TimeSeriesCrossValidation:
 
         for index in indices_train:
             end_train = index + length_train
-            train_index = index_data[index:end_train]
-            test_index = index_data[end_train : end_train + length_test]
+            train_index = index_data[index:end_train].values
+            test_index = index_data[end_train : end_train + length_test].values
             yield train_index, test_index
