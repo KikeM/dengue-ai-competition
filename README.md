@@ -6,6 +6,9 @@
 # dengue-ai-competition
 Dengue prediction competition from DrivenData.
 
+- [Competition Progess (Google Sheets)](https://docs.google.com/spreadsheets/d/1N42kJR5ekFPrsg5QxLaG4p8uZpuGTw1VFlO0mvzHjEE/edit#gid=1281079791)
+- [Competition Notes (Notion)](https://valbuenablackswan.notion.site/Dengue-Competition-a96945f8b2f54afe9cf25a0e1b9c69cb)
+
 > **Can you predict local epidemics of dengue fever?**
 > 
 > Dengue fever is a mosquito-borne disease that occurs in tropical 

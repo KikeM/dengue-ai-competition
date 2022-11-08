@@ -61,7 +61,6 @@ class DataManager:
     @cache
     def get_city_test_data(self, city):
         test_features = self.test_features.query(f"city=='{city}'")
-
         test_features = self.define_types(test_features)
         return test_features
 
