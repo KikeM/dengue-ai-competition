@@ -42,7 +42,6 @@ def create_submission(name: str, data_manager: DataManager, models: dict) -> Non
             left_index=True,
             right_index=True,
         )
-        _submission = _submission[Submission.COLS_SUBMISSION]
         submission = pd.concat([submission, _submission], axis=0)
 
     # Enforce data type
@@ -53,4 +52,8 @@ def create_submission(name: str, data_manager: DataManager, models: dict) -> Non
     filename = "_".join([str(today), name])
     filename += ".csv"
 
-    submission.to_csv(PATH_SUMISSIONS / filename, index=False)
+    submission[Submission.COLS_SUBMISSION].to_csv(
+        PATH_SUMISSIONS / filename, index=False
+    )
+
+    return submission
